@@ -20,3 +20,12 @@ add_action('wp_enqueue_scripts', 'add_jquery_ui_scripts');
 function add_jquery_cookie() {
     wp_enqueue_script( 'add_jquery_cookie', '/wp-content/themes/responsive-gohomeward/js/jquery.cookie.js', array( 'jquery' ), '1.0', true );
 }
+
+// add jquery ui stylesheet
+
+function add_query_ui_stylesheet() {
+    if ( ! is_admin() ) {
+        wp_enqueue_style( 'jqueryui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css', 20 );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'add_query_ui_stylesheet');
